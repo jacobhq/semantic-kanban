@@ -23,35 +23,18 @@ export default {
 	data () {
 		return {
 			tasks: [{
-				id: 3,
-				subject: 'Test backlog',
-				description: 'Test backlog',
-				status: 'backlog',
-				tags: ['help-wanted']
-			},
-			{
 				id: 1,
-				subject: 'Brace yourselves',
-				description: 'Winter is coming...',
-				status: 'doing',
-				dueDate: '2017-09-09 07:00',
-				owner: 2,
-				type: 'feature',
-				tags: [{title: 'request', color: 'green'}]
-			},
-			{
-				id: 2,
-				subject: 'Kill Cersei',
-				description: 'Shame!',
-				status: 'blocked',
-				dueDate: '2017-08-20 18:00',
+				subject: 'Welcome to my kanban',
+				description: 'This is a great todo list for me only because I am such a productivity freak.',
+				status: 'backlog',
 				owner: 1,
-				type: 'bug',
-				tags: ['critical', 'test']
-			}],
+				tags: ['help-wanted'],
+				dueDate: 'No due date'
+			}
+			],
 			members: [{
 				id: 1,
-				name: 'Danilo'
+				name: 'Jacob'
 			}],
 			options: {
 				defaultTaskDialog: true,
@@ -59,7 +42,7 @@ export default {
 				defaultMemberDialog: true,
 				taskExtraContent () {
 					return function () {
-						const dueDate = this.task.dueDate
+						var dueDate = this.task.dueDate
 						const remain = 10
 						const icon = this.task.type === 'feature'
 							? 'blue cubes icon'

@@ -12,3 +12,5 @@ semantic
 *.ntvs*
 *.njsproj
 *.sln
+
+.vercel

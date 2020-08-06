@@ -4,7 +4,8 @@
 			<form class="ui form">
 				<div class="required field">
 					<label>Subject</label>
-					<input type="text" name="subject" v-model="task.subject">
+					<input type="text" name="subject" v-model="task.subject" v-show="editSubject" v-on:blur="editSubject = !editSubject" autofocus>
+					<h3 style="cursor: pointer margin-top: 5px;" v-show="!editSubject" @click="editSubject = !editSubject" class="issue-name"><b>{{ task.subject }}</b><small class="pen"><small>edit</small></small></h3>
 				</div>
 				<div class="field">
 					<label>Description</label>
@@ -86,6 +87,7 @@
 		props: ['owners'],
 		data () {
 			return {
+				editSubject: false,
 				task: {
 					id: null,
 					subject: null,

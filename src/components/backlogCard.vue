@@ -2,7 +2,9 @@
 	<div
 		class="ui blue card"
 		v-bind:id="task.id"
-		v-on:click="openTask">
+		v-on:click="openTask"
+		style="cursor: grab;"
+		>
 		<a class="content" v-html="_topContent"></a>
 		<div class="content">
 			{{formattedTaskDescription}}
